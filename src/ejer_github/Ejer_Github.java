@@ -1,21 +1,46 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package ejer_github;
 
-/**
- *
- * @author 52614
- */
+package ejer_github;
+import java.util.Scanner;
+
+
 public class Ejer_Github {
 
-    /**
-     * @param args the command line arguments
-     */
+ 
     public static void main(String[] args) {
-        System.out.println("hola gurpo de POO");
+        Scanner sc = new Scanner(System.in);
+        String n;
+        
+        System.out.println("Hola grupo de POO");
+        System.out.println("Ingresa un nombre para obtener sus iniciales");
+        n = sc.nextLine();
+        
+        System.out.println(YELLOW + "--------------------------------");
+        System.out.println(GREEN + "Las iniciales son: ");
+        Iniciales(n);
     }
-    
+     public static void Iniciales(String nombre){
+        String[] iniciales = nombre.split(" ");
+        String completo = "";
+      
+        for (int i = 0; i < iniciales.length ; ++i ){
+            String Nom= iniciales[i];
+            Nom = Nom.replace(Nom.charAt(0), Character.toUpperCase(Nom.charAt(0)));
+            char charM =  Character.toUpperCase(Nom.charAt(0));
+            System.out.print(CIAN + charM);
+            
+            completo = completo + Nom + " ";
+           
+        }
+         System.out.println("");
+         System.out.println(YELLOW + "--------------------------------");
+         System.out.println(GREEN + "Y su nombre completo es: ");
+         System.out.println(CIAN + completo);
+         System.out.println(YELLOW + "--------------------------------");
+         
+    }
+        public static final String RED = "\u001B[31m";
+        public static final String GREEN = "\u001B[32m";
+        public static final String YELLOW = "\u001B[33m";
+        public static final String BLUE = "\u001B[34m";
+        public static final String CIAN = "\u001B[36m";
 }
